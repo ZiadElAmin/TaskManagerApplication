@@ -19,4 +19,4 @@ Feature: Filtering tasks
 
   Scenario: Filter tasks by status and priority together
     When I request my tasks filtered by status "TODO" and priority "LOW"
-    Then I should receive todo and low tasks
+    Then I should receive 1 task(s)

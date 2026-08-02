@@ -19,8 +19,9 @@ public class TaskSteps {
 
     @Given("I am logged in as user {string} with password {string}")
     public void iAmLoggedInAsUserWithPassword(String username, String password) {
-        context.lastToken = registerAndLogin(username, password);
-        context.lastUsername = username;
+        String uniqueUsername = username + "_" + System.currentTimeMillis();
+        context.lastToken = registerAndLogin(uniqueUsername, password);
+        context.lastUsername = uniqueUsername;
     }
 
     @Given("user {string} has created a task titled {string}")
