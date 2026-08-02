@@ -37,7 +37,7 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(taskService.createTask(request));
     }
 
-    // Both filters are optional query params, e.g. GET /api/tasks?status=DONE&priority=HIGH
+
     @GetMapping
     public ResponseEntity<List<TaskResponse>> getTasks(
             @RequestParam(required = false) TaskStatus status,

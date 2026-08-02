@@ -11,7 +11,7 @@ import java.util.Optional;
 
 public interface TaskRepository extends JpaRepository<Task, Long> {
 
-    // Basic listing, scoped to the owner so users only ever see their own tasks
+
     List<Task> findByOwner(User owner);
 
     List<Task> findByOwnerAndStatus(User owner, TaskStatus status);

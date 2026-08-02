@@ -11,10 +11,7 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.function.Function;
 
-/**
- * Small wrapper around the jjwt library responsible only for creating
- * and reading tokens. Nothing else in the app talks to jjwt directly.
- */
+
 @Component
 public class JwtUtil {
 
