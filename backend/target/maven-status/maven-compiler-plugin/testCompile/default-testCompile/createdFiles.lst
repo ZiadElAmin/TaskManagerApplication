@@ -1,5 +1,0 @@
-com\taskmanager\RunCucumberTest.class
-com\taskmanager\steps\TaskSteps.class
-com\taskmanager\config\CucumberSpringConfiguration.class
-com\taskmanager\steps\AuthSteps.class
-com\taskmanager\steps\TestContext.class

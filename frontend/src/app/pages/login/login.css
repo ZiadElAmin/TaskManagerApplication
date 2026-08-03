@@ -1,0 +1,45 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 2rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08) !important;
+  border-radius: 12px;
+}
+
+h1 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1b1b1b;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.submit-btn {
+  margin-top: 0.5rem;
+  height: 44px;
+}
+
+.switch-link {
+  margin-top: 1.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+  color: #555;
+}
+
+.switch-link a {
+  color: #2e7d32;
+  font-weight: 600;
+  text-decoration: none;
+}

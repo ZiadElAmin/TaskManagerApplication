@@ -1,0 +1,63 @@
+<div class="page">
+  <header class="topbar">
+    <h1>My Tasks</h1>
+    <div class="topbar-actions">
+      <button mat-flat-button color="primary" (click)="createTask()">
+        <mat-icon>add</mat-icon>
+        New Task
+      </button>
+      <button mat-stroked-button (click)="logout()">Log out</button>
+    </div>
+  </header>
+
+  <form [formGroup]="filterForm" class="filters">
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="">All</mat-option>
+        @for (s of statuses; track s) {
+          <mat-option [value]="s">{{ s }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="filter-field">
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option value="">All</mat-option>
+        @for (p of priorities; track p) {
+          <mat-option [value]="p">{{ p }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  @if (loading) {
+    <p class="empty-state">Loading...</p>
+  } @else if (tasks.length === 0) {
+    <p class="empty-state">No tasks yet. Create your first one.</p>
+  } @else {
+    <div class="task-grid">
+      @for (task of tasks; track task.id) {
+        <mat-card class="task-card">
+          <div class="task-header">
+            <h3>{{ task.title }}</h3>
+            <div class="chips">
+              <span class="chip status-{{ task.status }}">{{ task.status }}</span>
+              <span class="chip priority-{{ task.priority }}">{{ task.priority }}</span>
+            </div>
+          </div>
+
+          @if (task.description) {
+            <p class="task-desc">{{ task.description }}</p>
+          }
+
+          <div class="task-actions">
+            <button mat-button color="primary" (click)="editTask(task.id)">Edit</button>
+            <button mat-button (click)="deleteTask(task.id)">Delete</button>
+          </div>
+        </mat-card>
+      }
+    </div>
+  }
+</div>
